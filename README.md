@@ -1,7 +1,17 @@
 # 🚗 Vehica – Smart Vehicle Recommendation System
 
-Vehica is a full-stack MERN application that helps users discover vehicles across multiple categories using **ratings, reviews, and a score-based recommendation engine**.  
+Vehica is a full-stack MERN application that helps users discover vehicles across multiple categories using  
+**ratings, reviews, and a score-based recommendation engine**.  
 It provides meaningful insights to users before making a vehicle purchase decision.
+
+---
+
+## 🌐 Live Demo
+
+🔗 **Frontend:** https://vehica-recommendation.netlify.app  
+🔗 **Backend API:** https://vehica-mern.onrender.com/api  
+
+> ⚠️ Note: Backend is deployed on free-tier hosting and may take a few seconds to wake up on first request.
 
 ---
 
@@ -9,11 +19,12 @@ It provides meaningful insights to users before making a vehicle purchase decisi
 
 - Category-wise vehicle browsing (Cars, Bikes, Scooty, Trucks)
 - Score-based vehicle recommendations
+- Search and price-range filtering
 - User ratings (0–5 stars) with automatic average rating calculation
 - User reviews with authentication
 - Similar vehicle suggestions based on category and attributes
 - Secure user authentication using JWT
-- Admin functionality to add, update, and delete vehicle data
+- Admin dashboard to add, update, and delete vehicle data
 - RESTful API architecture
 
 ---
@@ -21,9 +32,11 @@ It provides meaningful insights to users before making a vehicle purchase decisi
 ## 🛠️ Tech Stack
 
 ### Frontend
-- React.js
+- React (Vite)
 - JavaScript
 - HTML, CSS
+- Bootstrap
+- Axios
 
 ### Backend
 - Node.js
@@ -31,7 +44,7 @@ It provides meaningful insights to users before making a vehicle purchase decisi
 - REST APIs
 
 ### Database
-- MongoDB (MongoDB Atlas)
+- MongoDB Atlas
 
 ### Authentication
 - JSON Web Tokens (JWT)
@@ -42,14 +55,15 @@ It provides meaningful insights to users before making a vehicle purchase decisi
 
 Vehicles are recommended using a **weighted scoring algorithm** based on:
 
-- User ratings
+- User ratings (highest weight)
 - Vehicle mileage
 - Price affordability
 - Category relevance
 
-Higher-scoring vehicles are prioritized in recommendations to help users make informed choices.
+Higher-scoring vehicles are prioritized to help users make informed decisions.
 
 ---
-👨‍💻 Author
 
-Rahul Pravin Dhumal
+## ⚙️ Environment Setup
+
+### Backend (`server/.env`)
