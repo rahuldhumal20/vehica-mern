@@ -12,7 +12,10 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
 
 function App() {
+  console.log("VITE_API_URL =", import.meta.env.VITE_API_URL);
+
   return (
+    
     <>
       <Navbar />
 
