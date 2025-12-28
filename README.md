@@ -28,6 +28,9 @@ It provides meaningful insights to users before making a vehicle purchase decisi
 - RESTful API architecture
 
 ---
+## 📱 Responsive Design
+The application features a responsive UI that works seamlessly across desktop and mobile browsers, providing an optimal user experience on different screen sizes.
+
 
 ## 🛠️ Tech Stack
 
