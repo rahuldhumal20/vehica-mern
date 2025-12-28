@@ -54,13 +54,31 @@ export default function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
-      <button className="navbar-brand btn btn-link text-warning fw-bold" onClick={goHome}>
+      {/* Logo */}
+      <button
+        className="navbar-brand btn btn-link text-warning fw-bold"
+        onClick={goHome}
+      >
         Vehica
       </button>
 
-      <div className="collapse navbar-collapse">
+      {/* ✅ ADD THIS: Mobile toggler */}
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#vehicaNavbar"
+        aria-controls="vehicaNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      {/* ✅ ADD id HERE */}
+      <div className="collapse navbar-collapse" id="vehicaNavbar">
         {/* Categories */}
-        <ul className="navbar-nav me-auto">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           {["Car", "Bike", "Scooty", "Truck"].map((c) => (
             <li key={c} className="nav-item">
               <button
@@ -78,22 +96,20 @@ export default function Navbar() {
           className="d-flex me-3"
           onSubmit={(e) => {
             e.preventDefault();
-
-            setFilters(prev => ({
+            setFilters((prev) => ({
               ...prev,
               search: prev.search.trim(),
-              category: ""   // clear category
+              category: ""
             }));
-
-            navigate("/"); // 🔥 ALWAYS GO TO HOME
+            navigate("/");
           }}
-          >
+        >
           <input
             className="form-control me-2"
             placeholder="Search vehicle"
             value={filters.search}
             onChange={(e) =>
-              setFilters(prev => ({
+              setFilters((prev) => ({
                 ...prev,
                 search: e.target.value
               }))
@@ -101,7 +117,6 @@ export default function Navbar() {
           />
           <button className="btn btn-outline-light">Search</button>
         </form>
-
 
         {/* Price filter */}
         <input
@@ -131,14 +146,14 @@ export default function Navbar() {
           </Link>
         )}
 
-
-        {/* Auth */}
+        {/* Admin */}
         {user?.role === "admin" && (
           <Link to="/admin" className="btn btn-warning me-2">
             Admin
           </Link>
         )}
 
+        {/* Auth */}
         {!user ? (
           <Link to="/login" className="btn btn-success">
             Login
@@ -150,5 +165,6 @@ export default function Navbar() {
         )}
       </div>
     </nav>
+
   );
 }
